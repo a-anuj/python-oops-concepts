@@ -1,1 +1,35 @@
 # OOPs - using python
+
+## Creating a class
+- Class can be created by using class keyword
+```py
+class classname:
+    body...
+```
+
+## Instantiating a class ie creating an object
+```py
+item1 = Item("Pen", 30, 10)
+```
+
+## init method
+- This method is called at default when the class is instantiated
+- It has a default parameter named as self which will be the object itself
+
+Example :
+```py
+def __init__(self, name, price, quantity):
+        self.name = name
+        self.price = price
+        self.quantity = quantity
+```
+
+- Class can be instantiated by providing the name, price, quantity parameters
+
+## __dict__ method : 
+- provide all the attributes present in the particular class or object.
+```py
+item1 = Item()
+print(item1.__dict__)
+```
+
