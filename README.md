@@ -40,3 +40,22 @@ print(item1.__dict__)
 def __repr__(self):
         return f"Item({self.name},{self.price},{self.quantity})"
 ```
+
+## Class Methods
+
+- In Python, a classmethod is a method that is bound to the class and not the instance of the class. It can be called on the class itself, rather than on instances of the class.
+- Class method can be identified by the decorator called @classmethod
+
+```py
+@classmethod
+    def instantiate_from_csv(cls):
+        with open("items.csv", "r") as f:
+            reader = csv.DictReader(f)
+            items = list(reader)
+        for item in items:
+            Item(
+                item["Name"],
+                float(item["Price"]),
+                float(item["Quantity"])
+            )
+```
