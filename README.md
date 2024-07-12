@@ -10,6 +10,9 @@
   - [Static Methods](#static-methods)
   - [Inheritance](#inheritance)
     - [Super Keyword](#super-keyword)
+  - [Getters and Setters](#getters-and-setters)
+    - [Getter](#getter)
+    - [Setter](#setter)
 
 ## Creating a class
 - Class can be created by using class keyword
@@ -105,3 +108,18 @@ class Phone(Item):
 super().__init__(name, price, quantity)
 ```
 
+## Getters and Setters 
+
+### Getter
+```py
+@property
+def name(self):
+    return self.__name
+```
+
+### Setter
+```py
+@name.setter
+def name(self, value):
+    self.__name = value
+```
