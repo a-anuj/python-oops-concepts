@@ -27,6 +27,15 @@ class Item:
                 float(item["Quantity"])
             )
 
+    @staticmethod
+    def is_integer(num):
+        if isinstance(num, float):
+            return num.is_integer()
+        elif isinstance(num, int):
+            return True
+        else:
+            return False
+
     def calc_price(self):
         return self.price * self.quantity
 
@@ -37,5 +46,5 @@ class Item:
         return f"Item({self.name},{self.price},{self.quantity})"
 
 
-Item.instantiate_from_csv()
-print(Item.all)
+print(Item.is_integer(7.0))
+
