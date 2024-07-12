@@ -59,3 +59,38 @@ def __repr__(self):
                 float(item["Quantity"])
             )
 ```
+
+## Static Methods
+- In Python, a static method is a method that belongs to a class rather than an instance of the class.
+- Unlike instance methods, static methods do not require a reference to the instance (self) or the class (cls) as their first parameter. 
+- They are defined using the @staticmethod decorator and can be called on the class itself or on instances of the class.
+
+```py
+@staticmethod
+    def is_integer(num):
+        if isinstance(num, float):
+            return num.is_integer()
+        elif isinstance(num, int):
+            return True
+        else:
+            return False
+```
+## Inheritance
+- Inheritance is a fundamental concept in object-oriented programming (OOP) that allows a class (called a child or derived class) to inherit attributes and methods from another class (called a parent or base class).
+- Inheritance promotes code reuse and allows for the creation of a hierarchical relationship between classes.
+- In Python, inheritance is implemented by defining a new class that takes an existing class as its base class.
+
+```py
+class Phone(Item):
+    def __init__(self, name: str, price: int, quantity=0, broken_phone=0):
+        super().__init__(name, price, quantity)
+        self.broken_phone = broken_phone
+        assert broken_phone >= 0, f"Broken phones must be greater than or equal to 0"
+```
+
+### Super Keyword
+- Super keyword can be used to get the details of attributes and methods from the super/parent class
+```py
+super().__init__(name, price, quantity)
+```
+
