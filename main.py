@@ -1,5 +1,9 @@
+import csv
+
+
 class Item:
     discount_rate = 0.8
+    all = []
 
     def __init__(self, name, price, quantity):
         assert price >= 0, "Price must be greater than or equal to zero"
@@ -9,14 +13,29 @@ class Item:
         self.price = price
         self.quantity = quantity
 
+        Item.all.append(self)
+
+    @classmethod
+    def instantiate_from_csv(cls):
+        with open("items.csv", "r") as f:
+            reader = csv.DictReader(f)
+            items = list(reader)
+        for item in items:
+            Item(
+                item["Name"],
+                float(item["Price"]),
+                float(item["Quantity"])
+            )
+
     def calc_price(self):
         return self.price * self.quantity
 
     def calc_discount(self):
         self.price = self.price * Item.discount_rate
 
+    def __repr__(self):
+        return f"Item({self.name},{self.price},{self.quantity})"
 
-item1 = Item("Pen", 30, 10)
-item1.calc_discount()
-print("The total discount amount is ", item1.price)
-print("The total price is ", item1.calc_price())
+
+Item.instantiate_from_csv()
+print(Item.all)
