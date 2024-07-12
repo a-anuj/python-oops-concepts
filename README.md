@@ -33,3 +33,10 @@ item1 = Item()
 print(item1.__dict__)
 ```
 
+## __repr__ method : 
+- shows all the instances of a class with specified names
+  
+```py
+def __repr__(self):
+        return f"Item({self.name},{self.price},{self.quantity})"
+```
