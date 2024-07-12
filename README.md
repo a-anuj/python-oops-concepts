@@ -1,5 +1,16 @@
 # OOPs - using python
 
+- [OOPs - using python](#oops---using-python)
+  - [Creating a class](#creating-a-class)
+  - [Instantiating a class ie creating an object](#instantiating-a-class-ie-creating-an-object)
+  - [init method](#init-method)
+  - [dict method :](#dict-method-)
+  - [repr method :](#repr-method-)
+  - [Class Methods](#class-methods)
+  - [Static Methods](#static-methods)
+  - [Inheritance](#inheritance)
+    - [Super Keyword](#super-keyword)
+
 ## Creating a class
 - Class can be created by using class keyword
 ```py
@@ -26,14 +37,14 @@ def __init__(self, name, price, quantity):
 
 - Class can be instantiated by providing the name, price, quantity parameters
 
-## __dict__ method : 
+## dict method : 
 - provide all the attributes present in the particular class or object.
 ```py
 item1 = Item()
 print(item1.__dict__)
 ```
 
-## __repr__ method : 
+## repr method : 
 - shows all the instances of a class with specified names
   
 ```py
