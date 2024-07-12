@@ -43,8 +43,16 @@ class Item:
         self.price = self.price * Item.discount_rate
 
     def __repr__(self):
-        return f"Item({self.name},{self.price},{self.quantity})"
+        return f"{self.__class__.__name__}({self.name},{self.price},{self.quantity})"
 
 
-print(Item.is_integer(7.0))
+class Phone(Item):
+    def __init__(self, name: str, price: int, quantity=0, broken_phone=0):
+        super().__init__(name, price, quantity)
+        self.broken_phone = broken_phone
+        assert broken_phone >= 0, f"Broken phones must be greater than or equal to 0"
 
+
+phone1 = Phone("Samsung", 12000, 10, 1)
+print(Item.all)
+print(Phone.all)
